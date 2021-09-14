@@ -84,11 +84,15 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  use .map w/ item and index*/
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
-}
-
-
+function getWinnersByYear(arr, func_cb, func_cb2) {
+    let arr_2 = [];
+    const winners = func_cb2(arr, getFinals);
+    const years = func_cb(arr, getFinals);
+    winners.map(function(item, index){
+        return arr_2.push(`In ${years[index]}, ${item} won the world cup!`);
+    });
+    return arr_2;
+ }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
